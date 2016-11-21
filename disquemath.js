@@ -10,6 +10,9 @@ function vector(x, y) {
 	this.subt = function(b) {
 		return addv(this, b.scale(-1));
 	}
+	this.clone = function() {
+		return v(this.x, this. y);
+	}
 }
 
 function v(x, y) {
