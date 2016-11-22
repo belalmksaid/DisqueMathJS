@@ -13,6 +13,15 @@ function vector(x, y) {
 	this.clone = function() {
 		return v(this.x, this. y);
 	}
+	this.length = function() {
+		return Math.sqrt(this.x * this.x + this.y * this.y);
+	}
+	this.normalize = function() {
+		var l = Math.sqrt(this.x * this.x + this.y * this.y);
+		this.x = this.x/l;
+		this.y = this.y/l;
+		return this;
+	}
 }
 
 function v(x, y) {
@@ -37,6 +46,6 @@ function ZERO() {
 
 var Disque = {
 	random: function(min, max) {
-		return (Math.random() * (max - min + 1) + min);
+		return (Math.random() * (max - min) + min);
 	}
 };
